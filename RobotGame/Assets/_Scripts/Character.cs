@@ -14,6 +14,8 @@ public class Character : MonoBehaviour {
 	private bool _canShoot;
 	private bool _triggerIsHeld;
 
+	private bool sldfk;
+
 	public List<Gun> guns;
 	private int _gunIndex;
 	public Gun activeGun;
@@ -33,47 +35,47 @@ public class Character : MonoBehaviour {
 	}
 
 	void Update () {    
-		Vector3 newVelocity = new Vector3(Input.GetAxis("LeftJoystickHorizontal"), -Input.GetAxis("LeftJoystickVertical"), 0);
-		newVelocity *= 10f;
-		rigidBody2d.velocity = newVelocity;
-
-		transform.eulerAngles = new Vector3(
-			transform.eulerAngles.x,
-			transform.eulerAngles.y, 
-			Mathf.Atan2(-Input.GetAxis("RightJoystickHorizontal"), -Input.GetAxis("RightJoystickVertical")) * Mathf.Rad2Deg);
-
-
-		if(Input.GetButtonDown(ButtonMappings.SwapStance)){
-			SwitchCombatMode();
-		}
-			
-		if(Input.GetAxis("RightTrigger") > 0.5f){
-
-			if(_canShoot){
-				if(_isInMeleeMode){
-					MeleeAttack();
-				}
-				else{
-					PullTrigger();
-				}
-			}
-		}else{
-			if(_triggerIsHeld){
-				LetGoOfTrigger();
-			}
-		}
-
-		if(Input.GetAxis("DPadHorizontal") < -0.5f){
-			if(_canSwitchWeapons){
-				SelectPreviousWeapon();
-			}
-		}else if(Input.GetAxis("DPadHorizontal") > 0.5f){
-			if(_canSwitchWeapons){
-				SelectNextWeapon();
-			}
-		}else{
-			_canSwitchWeapons = true;
-		}
+//		Vector3 newVelocity = new Vector3(Input.GetAxis("LeftJoystickHorizontal"), -Input.GetAxis("LeftJoystickVertical"), 0);
+//		newVelocity *= 10f;
+//		rigidBody2d.velocity = newVelocity;
+//
+//		transform.eulerAngles = new Vector3(
+//			transform.eulerAngles.x,
+//			transform.eulerAngles.y, 
+//			Mathf.Atan2(-Input.GetAxis("RightJoystickHorizontal"), -Input.GetAxis("RightJoystickVertical")) * Mathf.Rad2Deg);
+//
+//
+//		if(Input.GetButtonDown(ButtonMappings.SwapStance)){
+//			SwitchCombatMode();
+//		}
+//			
+//		if(Input.GetAxis("RightTrigger") > 0.5f){
+//
+//			if(_canShoot){
+//				if(_isInMeleeMode){
+//					MeleeAttack();
+//				}
+//				else{
+//					PullTrigger();
+//				}
+//			}
+//		}else{
+//			if(_triggerIsHeld){
+//				LetGoOfTrigger();
+//			}
+//		}
+//
+//		if(Input.GetAxis("DPadHorizontal") < -0.5f){
+//			if(_canSwitchWeapons){
+//				SelectPreviousWeapon();
+//			}
+//		}else if(Input.GetAxis("DPadHorizontal") > 0.5f){
+//			if(_canSwitchWeapons){
+//				SelectNextWeapon();
+//			}
+//		}else{
+//			_canSwitchWeapons = true;
+//		}
 
 	}
 
@@ -162,5 +164,9 @@ public class Character : MonoBehaviour {
 			GameplayHud.Instance.activeWeaponText.text = activeGun.gameObject.name;
 		}
 		_canSwitchWeapons = false;
+	}
+
+	public void MoveUp(){
+		
 	}
 }
