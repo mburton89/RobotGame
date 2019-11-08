@@ -1,0 +1,15 @@
+﻿<Properties StartupConfiguration="{D902A49B-DD4C-A333-5790-1EAE0BA5A043}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/_Scripts/KeyboardHandler.cs">
+    <Files>
+      <File FileName="Assets/_Scripts/2D/PixelHero.cs" Line="17" Column="18" />
+      <File FileName="Assets/_Scripts/KeyboardHandler.cs" Line="15" Column="14" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="f3d83249-8cc4-4cd7-9da1-a0058687d412" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
